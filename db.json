@@ -1,0 +1,32 @@
+{
+  "userDb": [
+    {
+      "userName": "Mangesh Divekar",
+      "address": "Navi Mumbai",
+      "contactNo": "1212121212",
+      "gender0": "Male",
+      "dob": "2021-12-31T18:30:00.000Z",
+      "qualification": "Masters",
+      "id": 3
+    },
+    {
+      "userName": "Sandip Kengar",
+      "address": "Kalamboli",
+      "contactNo": "5555555555",
+      "gender0": "Male",
+      "dob": "1996-03-16T18:30:00.000Z",
+      "qualification": "Masters",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

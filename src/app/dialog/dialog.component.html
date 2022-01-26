@@ -1,0 +1,57 @@
+<h2 mat-dialog-title>Add User Data</h2>
+
+<div mat-dialog-content>
+   <form [formGroup]="userForm">
+    <mat-form-field appearance="outline">
+        <mat-label>User Name</mat-label>
+        <input formControlName = "userName" matInput placeholder="Enter your name">
+    </mat-form-field><br>
+    <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input formControlName = "address" matInput placeholder="Enter your address">
+    </mat-form-field><br>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Contact number</mat-label>
+        <span matPrefix>+91 &nbsp;</span>
+        <input formControlName = "contactNo" type="tel" matInput placeholder="">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field><br>
+
+    <label for=""><h4>Gender</h4></label>
+    <mat-radio-group formControlName = "gender0" class="example-radio-group">
+        <mat-radio-button  class="example-radio-button" *ngFor="let gender of genders" [value]="gender"> 
+{{gender}}
+        </mat-radio-button>
+    </mat-radio-group><br>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Date of Birth</mat-label>
+        <input formControlName = "dob" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field><br>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Highest qualification</mat-label>
+        <mat-select formControlName = "qualification" placeholder="Select highest qualification">
+            <mat-option value="HSE">Highest Secondary School</mat-option>
+            <mat-option value="Bacholers">Bacholers</mat-option>
+            <mat-option value="Masters">Masters</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+
+    <!-- <section class="example-section"  *ngFor="let section of interest; let i = index">
+        <h4>Select your interest:</h4>
+        <p><mat-checkbox [formControl] = "section">Study</mat-checkbox></p>
+        <p><mat-checkbox formControlName="Sport">Sport</mat-checkbox></p>
+        <p><mat-checkbox formControlName="Entertainment">Entertainment</mat-checkbox></p>
+      </section> -->
+   </form>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+<button mat-raised-button color="warn" mat-dialog-close>Close</button>
+<button mat-raised-button color="primary" mat-dialog-close (click)="addUserData()">{{btnValue}}</button>
+</div>
